@@ -1,0 +1,51 @@
+{
+  "name": "vite-plugin-version-meta",
+  "version": "0.0.0",
+  "description": "A Vite plugin that generates version.json with build metadata (version, revision, build time)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "dev": "tsup src/index.ts --format esm --dts --watch",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "vite",
+    "plugin",
+    "version",
+    "json",
+    "build-meta",
+    "git",
+    "metadata",
+    "revision"
+  ],
+  "author": "myzkey",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/myzkey/vite-plugin-version-meta.git"
+  },
+  "peerDependencies": {
+    "vite": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.2.0"
+  }
+}
