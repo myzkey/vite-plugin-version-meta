@@ -27,7 +27,6 @@ function createMockConfig(outDir = 'dist'): ResolvedConfig {
 }
 
 describe('versionJsonPlugin', () => {
-  let originalCwd: string;
   let originalPackageJson: string;
 
   beforeEach(() => {
@@ -38,7 +37,6 @@ describe('versionJsonPlugin', () => {
     mkdirSync(TEST_DIR, { recursive: true });
 
     // Save original package.json
-    originalCwd = process.cwd();
     if (existsSync(PACKAGE_JSON_PATH)) {
       originalPackageJson = readFileSync(PACKAGE_JSON_PATH, 'utf8');
     }
